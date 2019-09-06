@@ -17,7 +17,7 @@ public class UPS extends Distributor {
     @Override
     public double getRank() {
         // some more detailed calculation
-        return 4.5;
+        return 4.2;
     }
 
     @Override
