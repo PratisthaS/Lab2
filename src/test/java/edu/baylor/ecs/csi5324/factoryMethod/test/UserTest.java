@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import java.math.BigDecimal;
 
+import edu.baylor.ecs.csi5324.factoryMethod.product.impl.HeurekaProduct;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -29,8 +30,10 @@ public class UserTest {
 	}
 
 	protected Product makeProduct(String name) {
-		return new Product(name);
+		return new HeurekaProduct(name);
 	}
+
+
 
 	@Before
 	public void setUp() {
@@ -84,18 +87,6 @@ public class UserTest {
 	}
 	
 	private void selectDistributorBasedOnRank(Store store) {
-		// <pick by rank> //TODO make me a strategy!
-		int index = 0;
-		double rank = 0;
-		for (int i = 0; i < store.getDistributorList().size(); i++) {
-			Distributor distributor = store.getDistributorList().get(i);
-			if (distributor.getRank() > rank) {
-				index = i;
-				rank = distributor.getRank();
-			}
-			System.out.println("* " + distributor.getClass().getSimpleName());
-		}
-		store.selectDistributor(index);
 	}
 
 }
